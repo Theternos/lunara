@@ -32,18 +32,16 @@
 .box {
     width: 300px;
     height: auto;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    background: rgba(161, 161, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 20px;
     position: relative;
 }
@@ -53,17 +51,6 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
-
-.top-bar {
-    width: 50%;
-    height: 4px;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%);
-    background-color: #333;
-    border-radius: 0 0 10px 10px;
 }
 
 .details {
