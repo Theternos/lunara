@@ -2777,7 +2777,7 @@ section#timeline {
     display: inline-block;
     height: 400px;
     position: absolute;
-    
+    border-radius: 0px 20px 20px 0px;
 }
 
 .home_map_area .home_details .box_home_details {
