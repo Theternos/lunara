@@ -2652,6 +2652,7 @@ section#timeline {
         clip-path: circle(50px at 100% -20%);
         -webkit-clip-path: circle(50px at 100% -10%);
         transition: all 1s ease-out;
+        justify-content: space-around;
     }
     .nav-links.open{
         clip-path: circle(1500px at 90% -10%);
