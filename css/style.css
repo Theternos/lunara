@@ -2765,18 +2765,19 @@ section#timeline {
 .home_map_area{
     position: relative;
     color: white;
-    width: 100vw;
     padding: 0px;
+    text-align: center;
 }
 .mapBox2{
     width: 400px;
     display: inline-block;
 }
 .home_details{
-    background-color: rgb(34, 30, 30);
+    background-color: rgba(56, 57, 86, 0.441);
     display: inline-block;
+    height: 400px;
     position: absolute;
-    height: 100%;
+    
 }
 
 .home_map_area .home_details .box_home_details {
@@ -2792,7 +2793,4 @@ section#timeline {
   
   .home_map_area .home_details .box_home_details .media {
     margin-bottom: 26px;
-  }
-  #map{
-    height: 500px;
   }
