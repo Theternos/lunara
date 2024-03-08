@@ -2761,3 +2761,38 @@ section#timeline {
         font-size: calc(2rem * var(--smaller));
     }
 }
+/* map css */
+.home_map_area{
+    position: relative;
+    color: white;
+    width: 100vw;
+    padding: 0px;
+}
+.mapBox2{
+    width: 400px;
+    display: inline-block;
+}
+.home_details{
+    background-color: rgb(34, 30, 30);
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+}
+
+.home_map_area .home_details .box_home_details {
+    max-width: 400px;
+    float: right;
+    width: 100%;
+    padding-left: 72px;
+    padding-right: 72px;
+    padding-top: 112px;
+    padding-bottom: 112px;
+    border-radius: 10px;
+  }
+  
+  .home_map_area .home_details .box_home_details .media {
+    margin-bottom: 26px;
+  }
+  #map{
+    height: 500px;
+  }
