@@ -1138,7 +1138,11 @@
 
             </div>
         </footer>
-
+        <div class="phbtn" onclick="ph()">
+            <img src="assets/phonepng.png">
+        </div>
+        <div class="ph" id="ph">
+        </div>
     </div>
 
     <script src="./js/alpinejs.min.js.download" defer=""></script>
@@ -1156,6 +1160,14 @@
             });
           });
         });
+        function ph(){
+            var phDiv = document.getElementById('ph');
+            if (phDiv.style.display === 'none' || phDiv.style.display === '') {
+                phDiv.style.display = 'block';
+            } else {
+                phDiv.style.display = 'none';
+            }
+        }
       </script>
 
 

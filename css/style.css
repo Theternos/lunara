@@ -2794,3 +2794,33 @@ section#timeline {
   .home_map_area .home_details .box_home_details .media {
     margin-bottom: 26px;
   }
+  .phbtn{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 10;
+    margin: 20px;
+    padding: 10px;
+    background-color: violet;
+  }
+  .ph{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    z-index: 10;
+    background-color: #ffffff;
+    display: none;
+  }
+  .phbtn img{
+    width: 100%;
+    height: 100%;
+  }
