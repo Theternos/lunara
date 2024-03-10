@@ -2526,13 +2526,17 @@ section#timeline {
     left: -5px;
   }
   section#timeline article:nth-child(1) div.inner h2 {
-    background: #e74d3c47;
+    background: #2ecc7057;
   }
   section#timeline article:nth-child(2) div.inner h2 {
-    background: #2ecc7057;
+    background: #e74d3c47;
   }
   section#timeline article:nth-child(3) div.inner h2 {
     background: #e67d2263;
+  }
+
+    section#timeline article:nth-child(4) div.inner h2 {
+            background: #ff050563;
   }
 
 
