@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Expanding popup-card Grid</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Slabo+27px|Yesteryear'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+</head>
+<style>
+    @charset "UTF-8";
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+
+    .popup-wrapper {
+        margin: 5em auto;
+        max-width: 1000px;
+        background-color: #fff;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .popup-header {
+        padding: 30px 30px 0;
+        text-align: center;
+    }
+
+    .popup-header__title {
+        margin: 0;
+        font-size: 2.5em;
+        font-weight: 500;
+        line-height: 1.1;
+    }
+
+    .popup-header__subtitle {
+        margin: 0;
+        font-size: 1.5em;
+        color: #949fb0;
+        font-family: "Yesteryear", cursive;
+        font-weight: 500;
+        line-height: 1.1;
+    }
+
+    .popup-popup-cards {
+        padding: 15px;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .popup-card {
+        margin: 15px;
+        width: calc((100% / 3) - 30px);
+        transition: all 0.2s ease-in-out;
+    }
+
+    @media screen and (max-width: 991px) {
+        .popup-card {
+            width: calc((100% / 2) - 30px);
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .popup-card {
+            width: 100%;
+        }
+    }
+
+    .popup-card:hover .popup-card__inner {
+        background-color: #1abc9c;
+        transform: scale(1.05);
+    }
+
+    .popup-card__inner {
+        width: 100%;
+        padding: 30px;
+        position: relative;
+        cursor: pointer;
+        background-color: #949fb0;
+        color: #eceef1;
+        font-size: 1.5em;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .popup-card__inner:after {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .popup-card__inner .fa {
+        width: 100%;
+        margin-top: 0.25em;
+    }
+
+    .popup-card__expander {
+        transition: all 0.2s ease-in-out;
+        background-color: #333a45;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #eceef1;
+        font-size: 1.5em;
+    }
+
+    .popup-card__expander .fa {
+        font-size: 0.75em;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .popup-card__expander .fa:hover {
+        opacity: 0.9;
+    }
+
+    .popup-card.is-collapsed .popup-card__inner:after {
+        content: "";
+        opacity: 0;
+    }
+
+    .popup-card.is-collapsed .popup-card__expander {
+        max-height: 0;
+        min-height: 0;
+        overflow: hidden;
+        margin-top: 0;
+        opacity: 0;
+    }
+
+    .popup-card.is-expanded .popup-card__inner {
+        background-color: #1abc9c;
+    }
+
+    .popup-card.is-expanded .popup-card__inner:after {
+        content: "";
+        opacity: 1;
+        display: block;
+        height: 0;
+        width: 0;
+        position: absolute;
+        bottom: -30px;
+        left: calc(50% - 15px);
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid #333a45;
+    }
+
+    .popup-card.is-expanded .popup-card__inner .fa:before {
+        content: "";
+    }
+
+    .popup-card.is-expanded .popup-card__expander {
+        max-height: 1000px;
+        min-height: 200px;
+        overflow: visible;
+        margin-top: 30px;
+        opacity: 1;
+    }
+
+    .popup-card.is-expanded:hover .popup-card__inner {
+        transform: scale(1);
+    }
+
+    .popup-card.is-inactive .popup-card__inner {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    .popup-card.is-inactive:hover .popup-card__inner {
+        background-color: #949fb0;
+        transform: scale(1);
+    }
+
+    .popup-card__expander {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media screen and (min-width: 992px) {
+        .popup-card:nth-of-type(3n+2) .popup-card__expander {
+            margin-left: calc(-100% - 30px);
+        }
+
+        .popup-card:nth-of-type(3n+3) .popup-card__expander {
+            margin-left: calc(-200% - 60px);
+        }
+
+        .popup-card:nth-of-type(3n+4) {
+            clear: left;
+        }
+
+        .popup-card__expander {
+            width: calc(300% + 60px);
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        .popup-card:nth-of-type(2n+2) .popup-card__expander {
+            margin-left: calc(-100% - 30px);
+        }
+
+        .popup-card:nth-of-type(2n+3) {
+            clear: left;
+        }
+
+        .popup-card__expander {
+            width: calc(200% + 30px);
+        }
+    }
+</style>
+
+<body>
+    <div class="popup-wrapper">
+        <div class="popup-header">
+            <h1 class="popup-header__title">Choose Domain</h1>
+        </div>
+
+        <div class="popup-popup-cards">
+
+            <!-- <div class=" popup-card [ is-collapsed ] ">
+          <div class="popup-card__inner [ js-expander ]">
+            <span>Healthcare and Wellness</span>
+          </div>
+          <div class="popup-card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
+            Expander
+          </div>
+        </div> -->
+
+            <div class=" popup-card [ is-collapsed ] ">
+                <div class="popup-card__inner [ js-expander ]">
+                    <span>Social Impact and Community Development</span>
+                </div>
+                <div class="popup-card__expander">
+                    <i class="fa fa-close [ js-collapser ]"></i>
+                    <h3>Problem Statement 1</h3>
+                    <p>Disparities in healthcare access and outcomes based on socio-economic factors.Create a programs
+                        to increase healthcare accessibility and awareness in underserved communities.</p>
+                    <h3>Problem Statement 2</h3>
+                    <p>High rates of unemployment among youth, particularly in economically disadvantaged
+                        areas.Establish a skill development programs or job placement initiatives to empower young
+                        people with employable skills.</p>
+                    <h3>Problem Statement 3</h3>
+                    <p>Limited community engagement and empowerment in decision-making processes.provide Facilitate
+                        community forums, workshops, and initiatives to empower local residents and involve them in
+                        decision-making.</p>
+                </div>
+            </div>
+
+            <div class=" popup-card [ is-collapsed ] ">
+                <div class="popup-card__inner [ js-expander ]">
+                    <span>Internet of Things</span>
+                </div>
+                <div class="popup-card__expander">
+                    <i class="fa fa-close [ js-collapser ]"></i>
+                    <h3>Problem Statement 1</h3>
+                    <p>Design an IoT based wearable location tracker and chatbot.* The wearable product could be
+                        hand-band, necklace or a jacket which may be used to track the subject even in case of emergency
+                        situation such as theft or a professional loosing his car or environmental extreme. The
+                        product/device should be able to answer user query in different local languages/ dialects. The
+                        designed system should be smart enough to understand and answer queries from user who suffer
+                        change in instructions due to mood/tone/health condition.</p>
+                    <h3>Problem Statement 2</h3>
+                    <p>Devise an innovative waste management strategy that minimizes waste generation, optimizes waste
+                        collection and disposal processes, and promotes recycling and sustainable practices.</p>
+                    <h3>Problem Statement 3</h3>
+                    <p>Develop an IoT enabled solution with Android application to give real-time parking space
+                        available on the Campus / City / Resident Societies.* Whenever a person wants to find a parking
+                        space on the campus, he has already registered to the application using his user id and
+                        password. When he finds for the parking space, the server will send a response with the
+                        available parking details, real-time mapped directions and real-time parking space to allocate
+                        parking according to the size of the vehicle. The application would be smart enough to identify
+                        whether the car is heading towards the same parking space or not. If not, the application would
+                        re-route the same car to another nearest available parking space.</p>
+                </div>
+            </div>
+
+            <div class=" popup-card [ is-collapsed ] ">
+                <div class="popup-card__inner [ js-expander ]">
+                    <span>Education and Learning</span>
+                </div>
+                <div class="popup-card__expander">
+                    <i class="fa fa-close [ js-collapser ]"></i>
+                    <h3>Problem Statement 1</h3>
+                    <p>Raise classroom Behavior issues in real-time:Develop a referral process platform that helps
+                        teachers to raise and escalate major behavior issues in the classroom in real-time The platform
+                        would work like a classroom management tool that will help teachers to share real_time
+                        information on their student's classroom behavior with students,otherteachers,parents and
+                        administrators.</p>
+                    <h3>Problem Statement 2</h3>
+                    <p>Data-driven Decision Support for Educators: Create a data analytics tool that aggregates and
+                        analyzes student performance data, attendance records, and engagement metrics to provide
+                        actionable insights and recommendations for educators to personalize teaching strategies and
+                        interventions.</p>
+                    <h3>Problem Statement 3</h3>
+                    <p>Gamification in Education: Integrate gamified elements into educational activities and
+                        assessments to increase student engagement, motivation, and learning outcomes. </p>
+                </div>
+            </div>
+
+            <div class=" popup-card [ is-collapsed ] ">
+                <div class="popup-card__inner [ js-expander ]">
+                    <span>Artificial Intelligence and Machine Learning</span>
+                </div>
+                <div class="popup-card__expander">
+                    <i class="fa fa-close [ js-collapser ]"></i>
+                    <h3>Problem Statement 1</h3>
+                    <p>Fraud Detection System for Financial Transactions: Design a fraud detection system for financial
+                        transactions using anomaly detection algorithms to identify suspicious patterns and prevent
+                        fraudulent activities in real-time.</p>
+                    <h3>Problem Statement 2</h3>
+                    <p>Virtual Personal Assistant: Develop a virtual personal assistant powered by AI that can perform
+                        tasks such as scheduling appointments, setting reminders, and answering queries using natural
+                        language understanding. </p>
+                    <h3>Problem Statement 3</h3>
+                    <p>Art Generation: Create an AI system capable of generating original artworks or assisting artists
+                        in the creative process, leveraging techniques such as generative adversarial networks (GANs).
+                    </p>
+                </div>
+            </div>
+
+            <div class=" popup-card [ is-collapsed ] ">
+                <div class="popup-card__inner [ js-expander ]">
+                    <span>Cybersecurity and Privacy</span>
+                </div>
+                <div class="popup-card__expander">
+                    <i class="fa fa-close [ js-collapser ]"></i>
+                    <div class="popup-card__expander">
+                        <i class="fa fa-close [ js-collapser ]"></i>
+                        <h3>Problem Statement 1</h3>
+                        <p>The Onion Routing (TOR) is an overlay anonymous network over internet, which not only
+                            anonymizes clients accessing the TOR network or internet but also facilitate hosting of
+                            servers anonymously. These servers have been reported to be hosting various hidden services
+                            involved in malicious activities. The goal of this problem statement is to develop Proof of
+                            Concept (PoC) to enumerate URLs (.onion) of active hidden servers hosted over TOR. Teams are
+                            supposed to examine the cryptographic security controls and survey existing vulnerabilities
+                            in underlying security architecture of TOR network to develop PoC for efficient enumeration
+                            of URLs of active hidden services hosted over TOR. </p>
+                        <h3>Problem Statement 2</h3>
+                        <p>Ransomware is a type of malicious software designed to block access ICT devices by encryption
+                            of data until ransom is paid to attacker. It is of paramount importance to increase
+                            awareness regarding such attacks and assess readiness of the ICT infrastructure of any
+                            organisation to thwart these attacks or atleast recover at the earliest. The developer
+                            should design and deploy a methodology to evaluate posture and preparedness of an
+                            organization towards stopping / mitigating threat from ransomware attack. The developed tool
+                            shall be evaluated based on following: (a) Depth of the tool to assess readiness of
+                            organization to hinder / stop /mitigate ransomware attack. (b) Assessment of organization
+                            towards detection of early signs of ransomware. (c) Ease of use and awareness imparted by
+                            the tool. (d) Visualization and reporting of the maturity assessment of the organization.
+                        </p>
+                        <h3>Problem Statement 3</h3>
+                        <p>Develop a user-end system to identify and block abusive media, sending alerts to the nodal
+                            agency, in the form of a desktop/mobile application or a web browser plugin.</p>
+                        <h3>Problem Statement 4</h3>
+                        <p>Create a technological solution for AI-enabled Phishing Links Detection and Alert System,
+                            capable of identifying phishing attack sources across various platforms. Additionally,
+                            design a crowd-sourcing-based solution to trace, analyze, and verify the authenticity of
+                            incoming calls, SMS, and emails, generating a risk score based on user input.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script>
+            var $cell = $('.popup-card');
+
+            //open and close popup-card when clicked on popup-card
+            $cell.find('.js-expander').click(function () {
+
+                var $thisCell = $(this).closest('.popup-card');
+
+                if ($thisCell.hasClass('is-collapsed')) {
+                    $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+                    $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+
+                    if ($cell.not($thisCell).hasClass('is-inactive')) {
+                        //do nothing
+                    } else {
+                        $cell.not($thisCell).addClass('is-inactive');
+                    }
+
+                } else {
+                    $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+                    $cell.not($thisCell).removeClass('is-inactive');
+                }
+            });
+
+            //close popup-card when click on cross
+            $cell.find('.js-collapser').click(function () {
+
+                var $thisCell = $(this).closest('.popup-card');
+
+                $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+                $cell.not($thisCell).removeClass('is-inactive');
+
+            });
+        </script>
+</body>
+
+</html>

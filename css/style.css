@@ -1,12 +1,14 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=fallback);
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 
 @font-face {
     font-family: "Uncut Sans";
     font-weight: 700;
     font-style: normal;
     font-display: fallback;
-    src: url(fonts/Uncut-Sans-Bold.woff2)format("woff2"), url(fonts/Uncut-Sans-Bold.woff)format("woff")
+    src: url(fonts/Uncut-Sans-Bold.otf)format("otf"), url(fonts/Uncut-Sans-Bold.otf)format("otf")
 }
 
 @font-face {
@@ -14,7 +16,7 @@
     font-weight: 700;
     font-style: italic;
     font-display: fallback;
-    src: url(fonts/Uncut-Sans-BoldOblique.woff2)format("woff2"), url(fonts/Uncut-Sans-BoldOblique.woff)format("woff")
+    src: url(fonts/Uncut-Sans-BoldOblique.otf)format("otf"), url(fonts/Uncut-Sans-BoldOblique.otf)format("otf")
 }
 
 @font-face {
@@ -22,7 +24,7 @@
     font-weight: 600;
     font-style: normal;
     font-display: fallback;
-    src: url(fonts/Uncut-Sans-Semibold.woff2)format("woff2"), url(fonts/Uncut-Sans-Semibold.woff)format("woff")
+    src: url(fonts/Uncut-Sans-Semibold.otf)format("otf"), url(fonts/Uncut-Sans-Semibold.otf)format("otf")
 }
 
 @font-face {
@@ -30,31 +32,10 @@
     font-weight: 500;
     font-style: normal;
     font-display: fallback;
-    src: url(fonts/Uncut-Sans-Medium.woff2)format("woff2"), url(fonts/Uncut-Sans-Medium.woff)format("woff")
+    src: url(fonts/Uncut-Sans-Medium.otf)format("otf"), url(fonts/Uncut-Sans-Medium.otf)format("otf")
 }
 
-*,
-::before,
-::after {
-    box-sizing: border-box;
-    border-width: 0;
-    border-style: solid;
-    border-color: #e5e7eb
-}
 
-::before,
-::after {
-    --tw-content: ''
-}
-
-html {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
-}
 
 body {
     margin: 0;
@@ -85,7 +66,7 @@ h6 {
 
 a {
     color: inherit;
-    text-decoration: inherit
+    text-decoration: none
 }
 
 b,
@@ -1011,7 +992,9 @@ input[type=range]::-moz-focus-outer {
 }
 
 .c8a4e {
-    position: relative
+    position: relative;
+    border-radius: 12px;
+
 }
 
 .c8igq {
@@ -1193,11 +1176,20 @@ input[type=range]::-moz-focus-outer {
 }
 
 .chip0 {
-    display: flex
+    display: flex;
+    max-width: 100vw !important;
+    overflow: hidden !important;
 }
 
 .cpfyo {
-    display: inline-flex
+    display: flex;
+    flex-direction: row;
+}
+.cpfyp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .cvcf9 {
@@ -1249,7 +1241,9 @@ input[type=range]::-moz-focus-outer {
 }
 
 .cbk2v {
-    min-height: 100vh
+    min-height: 100vh;
+    max-width: 100vw !important;
+    overflow: hidden !important;
 }
 
 .c0ayg {
@@ -1368,7 +1362,9 @@ input[type=range]::-moz-focus-outer {
 }
 
 .cuk8q {
-    flex-direction: column
+    flex-direction: column;
+    max-width: 100vw !important;
+    overflow: hidden !important;
 }
 
 .cutr6 {
@@ -1456,9 +1452,14 @@ input[type=range]::-moz-focus-outer {
 }
 
 .clv5h {
-    overflow: hidden
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
 }
-
+.clv6i {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+}
 .czrr8 {
     border-radius: 9999px
 }
@@ -1657,6 +1658,14 @@ input[type=range]::-moz-focus-outer {
     padding-top: 3rem;
     padding-bottom: 3rem
 }
+/* .cyo0ee {
+    padding-top: 1rem;
+    padding-bottom: 3rem
+} */
+.cyo0g {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
 
 .cof65 {
     padding-top: 0.375rem;
@@ -1707,9 +1716,7 @@ input[type=range]::-moz-focus-outer {
     padding-bottom: 3rem
 }
 
-.c2to7 {
-    padding-bottom: 4rem
-}
+
 
 .cv4kj {
     padding-top: 1rem
@@ -1761,7 +1768,8 @@ input[type=range]::-moz-focus-outer {
 .ch05i {
     font-size: 1.875rem;
     line-height: 1.333;
-    letter-spacing: -0.01em
+    letter-spacing: -0.01em;
+    font-family: "Poppins", sans-serif;
 }
 
 .cscl6 {
@@ -2317,7 +2325,12 @@ input[type=range]::-moz-focus-outer {
         padding-top: 5rem;
         padding-bottom: 5rem
     }
-
+    .c2n600 {
+        padding-bottom: 5rem
+    }
+    .c2n63 {
+        padding-top: 5rem;
+    }
     .cvvmk {
         padding-top: 4rem;
         padding-bottom: 4rem
@@ -2361,7 +2374,8 @@ input[type=range]::-moz-focus-outer {
     }
 
     .ctwr9 {
-        grid-column: span 2/span 2
+        grid-column: span 2/span 2;
+        margin: 5.5vh 0 0 0
     }
 
     .c344w {
@@ -2526,20 +2540,22 @@ section#timeline {
     left: -5px;
   }
   section#timeline article:nth-child(1) div.inner h2 {
-    background: #e74d3c47;
+      background: #2183da57;
+    }
+    section#timeline article:nth-child(2) div.inner h2 {
+        background: #e74d3c47;
+    }
+    section#timeline article:nth-child(3) div.inner h2 {
+        background: #e67d2263;
+    }
+    section#timeline article:nth-child(4) div.inner h2 {
+        background: #5dffa140;
   }
-  section#timeline article:nth-child(2) div.inner h2 {
-    background: #2ecc7057;
-  }
-  section#timeline article:nth-child(3) div.inner h2 {
-    background: #e67d2263;
-  }
-
 
   /*Kavin - Navbar*/
 
   nav {
-    height: 6rem;
+    height: 7rem;
     width: 100vw;
     display: flex;
     position: fixed;
@@ -2554,12 +2570,12 @@ section#timeline {
 
 /*Styling logo*/
 .logo{
-    padding: 0 1vw 1vh 4vw;
+    padding: 0 1vw 0 4vw;
     text-align: center;
 }
 .logo img {
-    height: 6rem;
-    width: 6rem;
+    height: 7rem;
+    width: 7rem;
 }
 
 /*Styling Links*/
@@ -2569,7 +2585,6 @@ section#timeline {
     width: 88vw;
     padding: 0 0.7vw;
     align-items: center;
-    text-transform: uppercase;
     margin: 0 5vw 0 0;
 }
 .nav-links li a{
@@ -2580,39 +2595,8 @@ section#timeline {
 .nav-links li {
     position: relative;
 }
-
-
-/*Styling Buttons*/
-.login-button{
-    background-color: transparent;
-    border: 1.5px solid #f2f5f7;
-    border-radius: 2em;
-    padding: 0.6rem 0.8rem;
-    margin-left: 2vw;
-    font-size: 1rem;
-    cursor: pointer;
-
-}
-.login-button:hover {
-    color: #131418;
-    background-color: #f2f5f7;
-    border:1.5px solid #f2f5f7;
-    transition: all ease-in-out 350ms;
-}
-.join-button{
-    color: #131418;
-    background-color: #61DAFB;
-    border: 1.5px solid #61DAFB;
-    border-radius: 2em;
-    padding: 0.6rem 0.8rem;
-    font-size: 1rem;
-    cursor: pointer;
-}
-.join-button:hover {
-    color: #f2f5f7;
-    background-color: transparent;
-    border:1.5px solid #f2f5f7;
-    transition: all ease-in-out 350ms;
+.nav-links a {
+    font-size: 18px;
 }
 
 /*Styling Hamburger Icon*/
@@ -2760,4 +2744,169 @@ section#timeline {
     .countdown_container li span {
         font-size: calc(2rem * var(--smaller));
     }
+    .footer-common{
+        flex-direction: column !important;
+    }
+    .cvx4v {
+        padding-top: 5vh;
+    }
+    .inner h2{
+        font-size: 11px !important;
+    }
+    .contactcontent1 span {
+        font-size: 12px !important;
+    }
+    .contact1 {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .contact1 h2 {
+        font-size: 30px;
+    }
+    .contact-bottom-box{
+        max-width: 90vw !important;
+        padding: auto 0 0 0;
+    }
+}
+
+
+
+@media all and (min-width: 768px) {
+    .cr520 {
+        min-width: 500px;
+        height: 400px;
+        border: 0;
+        border-radius:12px;
+    }
+    .contactcontent1{
+        margin-left: 10%;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+    .contact1 h2{
+        margin-top: 5%;
+        font-weight: 600;
+        font-family: "Fredoka", sans-serif;
+        font-optical-sizing: auto;
+        font-size: 35px;
+    }
+}
+
+/*Committee Members @ Arun*/
+
+.box {
+    width: 320px;
+    height: auto;
+    background: rgba(161, 161, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:left;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+    position: relative;
+}
+.card-side-img{
+    max-width: 80px;
+    margin: 0 15px 0 0;
+}
+.card-side-img img{
+    width: 60px;
+    height: 60px;
+    border-radius: 60%;
+    /* border: 1px solid #cccccc64; */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.details {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
+
+}
+
+.details h2 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 5px 0;
+
+}
+
+@media(max-width:612px) {
+    .box {
+        flex-grow: 0.7;
+    }
+}
+
+.title-t {
+    color: #d0d0d0;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    z-index: 1;
+}
+@media(max-width:1083px) {
+    .title-t {
+        text-align: center;
+    }
+}
+@media(max-width:770px) {
+    .title-t {
+        font-size: 17px;
+    }
+}
+
+.combo{
+    font-size: 12px;
+    color: rgb(156 163 175/var(--tw-text-opacity));
+
+}
+
+.contact1{
+    width: 400px;
+        height:380px;
+        border-radius: 12px;
+        border-width: 2px;
+        border-color:#fff !important;
+    }
+   
+        
+
+.contact-bottom-box{
+    margin-top: 3rem;
+    background: rgba(205, 239, 255, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.3px);
+    -webkit-backdrop-filter: blur(7.3px);
+}
+.footer-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+}
+.footer-common{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2vh 0 5vh 0;
+}
+.footer-common h3{
+  font-size: 20px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
 }
