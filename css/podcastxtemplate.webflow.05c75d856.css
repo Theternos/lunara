@@ -8585,7 +8585,6 @@ figcaption {
   }
 
   .section {
-    padding-top: 160px;
     padding-bottom: 160px;
   }
 
@@ -10176,8 +10175,9 @@ figcaption {
   }
 
   .card.contact {
-    min-height: 798px;
+    min-height: fit-content;
     padding: 55px 40px;
+    align-items: flex-start;
   }
 
   .card.default {
@@ -12933,4 +12933,36 @@ figcaption {
   font-weight: 800;
   cursor: pointer;
   color: #d2d2d2;
+}
+.all-events-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.all-events-list h2{
+  font-size: 16px;
+  text-align: center;
+  margin: 20px 0 0 0;
+  padding-top: 0px;
+}
+.all-events-list p{
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px !important;
+}
+.all-events-list .card{
+  padding: 20px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 991px) {
+  .all-events-list{
+    flex-direction: column;
+  }
+  .all-events-list .card{
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 20px;
+  }
 }
