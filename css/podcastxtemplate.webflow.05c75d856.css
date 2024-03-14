@@ -8,7 +8,7 @@ body {
   margin: 0;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+article, aside, details, figcaption, figure, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -25,8 +25,6 @@ audio:not([controls]) {
 [hidden], template {
   display: none;
 }
-
-
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -837,6 +835,9 @@ label {
 }
 
 @media screen and (max-width: 767px) {
+  ul, ol {
+    padding-left: 0px !important;
+  }
   .w-hidden-main, .w-hidden-medium {
     display: inherit !important;
   }
@@ -4063,12 +4064,7 @@ figcaption {
   color: var(--secondary-1);
 }
 
-.footer {
-  border-top: 1px solid var(--neutral-400);
-  background-color: #fff;
-  padding-top: 72px;
-  padding-bottom: 32px;
-}
+
 
 .footer.footer-v3 {
   padding-top: 32px;
@@ -8572,9 +8568,7 @@ figcaption {
     overflow: auto;
   }
 
-  .footer {
-    padding-top: 60px;
-  }
+
 
   .footer-logo-container {
     margin-bottom: 20px;
@@ -9883,10 +9877,7 @@ figcaption {
     margin-left: 0;
   }
 
-  .footer {
-    padding-top: 50px;
-    padding-bottom: 27px;
-  }
+
 
   .section {
     padding-top: 128px;
@@ -11375,9 +11366,7 @@ figcaption {
     font-size: 26px;
   }
 
-  .footer {
-    padding-top: 42px;
-  }
+
 
   .footer-nav {
     flex-direction: column;
