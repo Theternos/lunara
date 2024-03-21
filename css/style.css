@@ -2,20 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Saira:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-body::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
-}
-
-body::-webkit-scrollbar-track {
-  background: #1e2e4e; /* color of the tracking area */
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #bc6aee7d; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 2px solid rgb(234, 234, 234); /* creates padding around scroll thumb */
-}
-
 @font-face {
   font-family: "Uncut Sans";
   font-weight: 700;
