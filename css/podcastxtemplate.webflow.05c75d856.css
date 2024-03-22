@@ -835,6 +835,9 @@ label {
 }
 
 @media screen and (max-width: 767px) {
+  .flex-topics-out ul, .flex-topics-out ol {
+  padding-left: 40px !important;
+  }
   ul, ol {
     padding-left: 0px !important;
   }

@@ -67,10 +67,10 @@
                         <a class="chip0 c4mnq c5mpl chs2t cazq3 ckdyj cdm1x c6m7s ckwz7 cysah cua40"
                             href="./index.html#contactlist">Contact</a>
                     </li>
-                    <!-- <li>
+                    <li>
                         <a class="chip0 c4mnq c5mpl chs2t cazq3 ckdyj cdm1x c6m7s ckwz7 cysah cua40"
-                            href="#">Accommodation</a>
-                    </li> -->
+                            href="#"  onclick="openFullscreen()">Accommodation</a>
+                    </li>
                     <li class="c8h5l">
                         <a class="c2pi2 c0ayg c4wey cl6ef cf4pm cqbpd cxmkl c4aul c76qn"
                             href="./events.html#all-events">
@@ -87,6 +87,30 @@
 
             <!-- Hero -->
             <section id="home" class="c8a4e clv5h">
+
+                <!--Accommodation-->
+                <section class="fullscreen" id="fullscreen">
+                    <div class="fullscreen-content">
+                        <div class="cn6f7" aria-hidden="true"></div>
+
+                        <!-- Bg illustration -->
+                        <div class="c307p c1sv4 cqa37 cavhb ck5f6" aria-hidden="true">
+                            <img src="./assets/features-illustration.svg" class="cy2lr" width="608"
+                                height="305" alt="Illustration">
+                        </div>
+                        <!-- Close button -->
+                        <span class="close-button" onclick="closeFullscreen()">&times;</span>
+                        <section class="section bg-neutral-200">
+                            <div class="container-default w-container">
+                                <div class="faqs-wrapper">
+                                    <h2 class="title faqs">Problem Statements (Domain wise)</h2>
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
 
                 <!-- Bg gradient -->
                 <div class="c5sfa c307p c8igq cpg49 c5n0y cavhb cigfq c4wey ckoll cn6f7 cma1x" aria-hidden="true"></div>
@@ -642,7 +666,7 @@
                                     <div class="ciljg ckdyj">2 Technical + 1 Non Technical</div>
                                     <div class="c6u0s cpfyo c6nex cejd3"></div>
                                     <a class="c2pi2 c0ayg c4wey cl6ef cf4pm cqbpd cxmkl c4aul c76qn"
-                                        href="https://forms.gle/cnzeHWGKEVLOJuJ19">
+                                        href="https://forms.gle/cnzeHWGKEVLoJuJ19">
                                         Grab Now<span class="cfe40 cr1tk c56im cv73b c6m7s ckwz7 ccx8x">-&gt;</span>
                                     </a>
                                 </div>
@@ -1285,6 +1309,33 @@
                 });
             });
         }); 
+    </script>
+    <script>
+        window.addEventListener('hashchange', function () {
+            var hash = window.location.hash.substring(1);
+            var sections = document.querySelectorAll('events');
+            sections.forEach(function (section) {
+                if (section.id === hash) {
+                    section.style.display = 'block';
+                    section.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+            window.scrollTo(0, 0);
+        });
+    
+        window.dispatchEvent(new Event('hashchange'));
+    
+        function openFullscreen() {
+            var fullscreenSection = document.getElementById('fullscreen');
+            fullscreenSection.classList.add('show');
+        }
+    
+        function closeFullscreen() {
+            var fullscreenSection = document.getElementById('fullscreen');
+            fullscreenSection.classList.remove('show');
+        }
     </script>
 </body>
 
